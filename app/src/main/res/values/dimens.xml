@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">24dp</dimen>
+    <dimen name="margin_distance">8dp</dimen>
+    <dimen name="bigger_font">15dp</dimen>
+    <dimen name="resultsTextSize">24sp</dimen>
+    <dimen name="biggerFontSize">40dp</dimen>
+    <dimen name="bmi_button_layout_width">190dp</dimen>
+    <dimen name="bmi_button_layout_height">88dp</dimen>
+    <dimen name="bmi_button_text_size">18sp</dimen>
+    <dimen name="mass_text_marginStart">24dp</dimen>
+    <dimen name="mass_text_marginTop">32dp</dimen>
+</resources>

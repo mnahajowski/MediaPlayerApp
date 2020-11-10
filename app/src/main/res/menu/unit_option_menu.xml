@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/polish_units"
+        android:title="@string/polish_units"/>
+    <item android:id="@+id/english_units"
+        android:title="@string/english_units" />
+    <item
+        android:id="@+id/check_history_item"
+        android:title="@string/check_history" />
+
+</menu>
