@@ -47,7 +47,7 @@
         android:id="@+id/heightTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="@dimen/heightTV_layout_marginStart"
         android:text="@string/polish_height_cm"
         app:layout_constraintBottom_toTopOf="@+id/heightET"
         app:layout_constraintEnd_toEndOf="parent"

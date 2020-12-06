@@ -20,8 +20,11 @@ import pl.pwr.andz1.i00000.bmi.BmiResultObject
 import pl.pwr.andz1.i00000.databinding.ActivityMainBinding
 
 const val RESULTS_SHARED_KEY = "result_history"
-const val SHARED_PREFERENECES_STRING = "shared preferences"
+const val SHARED_PREFERENCES_STRING = "shared preferences"
 const val BMI_SAVED_VALUE = "bmi_value"
+const val LAST_10_HISTORY_LIST_SERIALIZABLE_KEY = "mytext"
+const val LAST_10_HISTORY_LIST_INTENT_KEY = "Bundle"
+const val BMI_VALUE_INTENT_KEY = "bmiValue"
 
 //246711_Marcin_Nahajowski
 //Pixel_3a_API_30_x86
@@ -37,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sharedPreferences = getSharedPreferences(SHARED_PREFERENECES_STRING, MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_STRING, MODE_PRIVATE)
         val gson = Gson()
         val json = sharedPreferences.getString(RESULTS_SHARED_KEY, null)
 
@@ -168,22 +171,21 @@ class MainActivity : AppCompatActivity() {
     fun PassBmiValueToNextScreen(v: View?) {
 
         val intent = Intent(this, BmiResultAcitivity::class.java)
-        //intent.putExtra("bmiValue", binding.bmiTV.toString().toDouble())
-        intent.putExtra("bmiValue", binding.bmiTV.text.toString().toDouble())
+        intent.putExtra(BMI_VALUE_INTENT_KEY, binding.bmiTV.text.toString().toDouble())
         startActivityForResult(intent, 1)
     }
 
     fun ShowHistory(v: View?) {
         val intent = Intent(this, HistoryActivity::class.java)
         val args = Bundle()
-        args.putSerializable("mytext", last10history)
-        intent.putExtra("Bundle", args)
+        args.putSerializable(LAST_10_HISTORY_LIST_SERIALIZABLE_KEY, last10history)
+        intent.putExtra(LAST_10_HISTORY_LIST_INTENT_KEY, args)
         startActivity(intent)
     }
 
     override fun onPause() {
         super.onPause()
-        val sharedPreferences = getSharedPreferences(SHARED_PREFERENECES_STRING, MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_STRING, MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         val gson = Gson()
         val json: String = gson.toJson(last10history.get())

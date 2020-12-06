@@ -1,39 +1,41 @@
 package pl.pwr.andz1.i00000.bmi
 
 import android.content.res.Resources
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.text.DecimalFormat
+import pl.pwr.andz1.i00000.R
+import pl.pwr.andz1.i00000.databinding.SingleResultLayoutBinding
+import androidx.databinding.DataBindingUtil
 
 class HistoryRecyclerAdapter(private val myDataset: ArrayList<BmiResultObject>) :
     RecyclerView.Adapter<HistoryRecyclerAdapter.MyViewHolder>() {
 
-    class MyViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
+
+    class MyViewHolder(itemView: SingleResultLayoutBinding) : RecyclerView.ViewHolder(itemView.root) {
+        val itemLayoutBinding : SingleResultLayoutBinding = itemView
+    }
 
     override fun onCreateViewHolder(
             parent: ViewGroup,
             viewType: Int
-    ): HistoryRecyclerAdapter.MyViewHolder {
+    ): MyViewHolder {
 
-        val tv = TextView(parent.context)
-        tv.layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-        )
-
-        return MyViewHolder(tv)
+        val itemLayoutBinding = DataBindingUtil.inflate<SingleResultLayoutBinding>(
+                LayoutInflater.from(parent.context), R.layout.single_result_layout, parent, false)
+        return MyViewHolder(itemLayoutBinding)
     }
-    val Int.px: Float
-        get() = (this * Resources.getSystem().displayMetrics.density).toFloat()
-
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
-        val myObject = myDataset[position] as BmiResultObject
+        val myObject = myDataset[position]
         val index = position + 1
-        holder.textView.text = java.lang.String.format("%3d.     ", index) + myObject.toString()
-        holder.textView.textSize = 8.px
+        holder.itemLayoutBinding.numberTextView.text = "$index."
+        holder.itemLayoutBinding.bmiTextView.text = myObject.bmi_result.toString()
+        holder.itemLayoutBinding.heightTv.text = myObject.height.toString()
+        holder.itemLayoutBinding.massTextView.text = myObject.weight.toString()
+        holder.itemLayoutBinding.unitTextView.text = myObject.unit
+        holder.itemLayoutBinding.dateTextView.text = myObject.date.toString()
 
     }
 
