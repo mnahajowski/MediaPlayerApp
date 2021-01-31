@@ -1,4 +1,4 @@
-package pl.pwr.andz1.i00000
+package pl.pwr.andz1.MediaPlayerPackage
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -8,14 +8,13 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import pl.pwr.andz1.i00000.databinding.ActivityMainBinding
+import pl.pwr.andz1.MediaPlayerPackage.databinding.ActivityMainBinding
 
 
 //246711_Marcin_Nahajowski

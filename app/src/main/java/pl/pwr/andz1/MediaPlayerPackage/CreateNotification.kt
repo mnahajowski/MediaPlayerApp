@@ -1,7 +1,6 @@
-package pl.pwr.andz1.i00000
+package pl.pwr.andz1.MediaPlayerPackage
 
 import Services.NotificationActionService
-import android.app.Notification
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent

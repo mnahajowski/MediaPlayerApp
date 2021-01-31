@@ -1,4 +1,4 @@
-package pl.pwr.andz1.i00000
+package pl.pwr.andz1.MediaPlayerPackage
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package pl.pwr.andz1.i00000
+package pl.pwr.andz1.MediaPlayerPackage
 
 import org.junit.Test
 
@@ -10,5 +10,5 @@ class ExampleUnitTest {
     fun sum_is_correct() {
         assertEquals(4, 2+2)
     }
-    
+
 }

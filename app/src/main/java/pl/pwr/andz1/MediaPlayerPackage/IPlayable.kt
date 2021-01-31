@@ -1,4 +1,4 @@
-package pl.pwr.andz1.i00000
+package pl.pwr.andz1.MediaPlayerPackage
 
 interface IPlayable {
     fun onTrackPrevious() : Unit
