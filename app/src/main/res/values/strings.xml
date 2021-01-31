@@ -1,32 +1,9 @@
 <resources>
-    <string name="app_name">BMI</string>
-    <string name="polish_mass_kg">Mass [kg]:</string>
-    <string name="english_mass_pd">Mass [pd]:</string>
-    <string name="count_bmi">Count BMI</string>
-    <string name="empty_value">0.00</string>
-    <string name="height_is_empty">Please provide value.</string>
-    <string name="height_is_invalid">Height is invalid</string>
-    <string name="weight_is_empty">Please provide value</string>
-    <string name="weight_is_invalid">Weight is invalid</string>
-    <string name="polish_height_cm">Height [cm]:</string>
-    <string name="english_height_inch">Height [inch]:</string>
-    <string name="polish_units">Polish units [cm/kg]</string>
-    <string name="english_units">English units [lb/inch]</string>
-    <string name="check_history">History</string>
-    <string name="severely_underweight">You seem to be severely underweight, take care!</string>
-    <string name="very_severely_underweight">You seem to be very severely underweight, do something!</string>
-    <string name="underweight">You seem to be underweight, take care!</string>
-    <string name="normal_weight">You seem to be normal (healthy weight), well done!</string>
-    <string name="overweight">You seem to be overweight, take care!</string>
-    <string name="moderately_obese">You seem to be moderately obese, take care!</string>
-    <string name="severely_obese">You seem to be severely obese, take care!</string>
-    <string name="very_severely_obese">You seem to be very severely obese, do something!</string>
-    <string name="tab">\u0009\u0009\u0009\u0009</string>
-    <string name="textview">TextView</string>
-    <string name="polish_units_string">Polish</string>
-    <string name="english_units_string">English</string>
-    <string name="bmi_text_label">BMI</string>
-    <string name="height_text_label">Height</string>
-    <string name="mass_text_label">Mass</string>
-    <string name="unit_text_label">Unit</string>
+    <string name="app_name">MUSIC PLAYER</string>
+    <string name="song1">STARS</string>
+    <string name="song2">BREAK MY HEART</string>
+    <string name="song3">DONT START NOW</string>
+    <string name="song4">BLINDING LIGHTS</string>
+    <string name="song5">DONT STOP</string>
+
 </resources>

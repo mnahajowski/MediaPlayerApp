@@ -6,104 +6,111 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.59" />
-
-    <TextView
-        android:id="@+id/massTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mass_text_marginStart"
-        android:layout_marginTop="@dimen/mass_text_marginTop"
-        android:layout_marginBottom="@dimen/margin_distance"
-        android:text="@string/polish_mass_kg"
-        app:layout_constraintBottom_toTopOf="@+id/massET"
+    <ImageButton
+        android:id="@+id/playBtn"
+        android:layout_width="87dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="256dp"
+        android:background="@android:color/transparent"
+        android:onClick="playMusic"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/massET"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin"
-        android:layout_marginEnd="@dimen/margin"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/heightET"
+    <ImageButton
+        android:id="@+id/previousBtn"
+        android:layout_width="89dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="256dp"
+        android:background="@android:color/transparent"
+        android:onClick="goPrevious"
+        android:src="@drawable/ic_baseline_skip_previous_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nextBtn"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="256dp"
+        android:background="@android:color/transparent"
+        android:onClick="goNext"
+        android:src="@drawable/ic_baseline_skip_next_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintStart_toEndOf="@+id/playBtn"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/heightTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/heightTV_layout_marginStart"
-        android:text="@string/polish_height_cm"
-        app:layout_constraintBottom_toTopOf="@+id/heightET"
+
+    <ImageButton
+        android:id="@+id/fastforward"
+        android:layout_width="97dp"
+        android:layout_height="98dp"
+        android:layout_marginEnd="48dp"
+        android:background="@android:color/transparent"
+        android:onClick="fastForward"
+        android:src="@drawable/ic_baseline_fast_forward_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/massET"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.626"
+        app:layout_constraintStart_toEndOf="@+id/stop"
+        app:layout_constraintTop_toBottomOf="@+id/playBtn"
+        app:layout_constraintVertical_bias="0.501" />
 
-    <EditText
-        android:id="@+id/heightET"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin"
-        android:layout_marginEnd="@dimen/margin"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/massET" />
-
-    <Button
-        android:id="@+id/countBTN"
-        android:layout_width="@dimen/bmi_button_layout_width"
-        android:layout_height="@dimen/bmi_button_layout_height"
-        android:layout_marginStart="@dimen/margin"
-        android:layout_marginEnd="@dimen/margin"
-        android:onClick="count"
-        android:text="@string/count_bmi"
-        android:textSize="@dimen/bmi_button_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
-
-    <TextView
-        android:id="@+id/bmiTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="PassBmiValueToNextScreen"
-        android:text="@string/empty_value"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="@dimen/biggerFontSize"
-        android:visibility="invisible"
+    <ImageButton
+        android:id="@+id/stop"
+        android:layout_width="97dp"
+        android:layout_height="98dp"
+        android:background="@android:color/transparent"
+        android:onClick="stopMusic"
+        android:src="@drawable/ic_baseline_stop_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countBTN" />
+        app:layout_constraintTop_toBottomOf="@+id/playBtn"
+        app:layout_constraintVertical_bias="0.501" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="98dp" />
+    <ImageButton
+        android:id="@+id/fastrewind"
+        android:layout_width="97dp"
+        android:layout_height="98dp"
+        android:background="@android:color/transparent"
+        android:onClick="fastRewind"
+        android:src="@drawable/ic_baseline_fast_rewind_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fastforward"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playBtn"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <TextView
+        android:id="@+id/music_title"
+        android:layout_width="407dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/playBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="264dp"
+        android:layout_height="274dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/music_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_library_music_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
